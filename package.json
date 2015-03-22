@@ -1,0 +1,15 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "web app form book to learn more about nodejs",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergio Ortiz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.12.3",
+    "express3-handlebars": "^0.5.2"
+  }
+}
