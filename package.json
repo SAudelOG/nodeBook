@@ -9,6 +9,7 @@
   "author": "Sergio Ortiz",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.12.2",
     "express": "^4.12.3",
     "express3-handlebars": "^0.5.2"
   },
@@ -19,6 +20,6 @@
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-exec": "^0.4.6",
     "mocha": "^2.2.1",
-    "zombie": "^3.1.0"
+    "zombie": "~2.0.0-alpha31"
   }
 }
