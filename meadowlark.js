@@ -4,7 +4,9 @@
 
 	var express = require('express'),
 		 fortune = require('./lib/fortune.js'),
-		 formidable = require('formidable');
+		 formidable = require('formidable'),
+		 jqupload = require('jquery-file-upload-middleware'),
+		 credentials = require('./credentials.js');
 
 
 	var app = express();
@@ -41,6 +43,19 @@
 
 	app.use(require('body-parser')());
 
+	app.use(require('cookie-parser')(credentials.cookieSecret));
+
+	app.use('/upload', function(req, res, next){
+		var now = Date.now();
+		jqupload.fileHandler({
+			uploadDir: function(){
+				return __dirname + '/public/uploads/' + now;
+			},
+			uploadUrl: function(){
+				return '/uploads/' + now;
+			},
+		})(req, res, next);
+	});
 	app.get('/', function(req, res){
 		res.render('home');
 	});
@@ -77,7 +92,7 @@
 			animal: 'squirrel',
 			bodyPart: 'tail',
 			adjective: 'bushy',
-			noun: 'heck'
+			noun: 'heckss'
 		});
 	});
 

@@ -5,3 +5,6 @@ node_modules
 
 #logs
 *.log
+
+#credentials
+credentials.js
