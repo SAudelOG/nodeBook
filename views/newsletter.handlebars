@@ -1,6 +1,6 @@
 <h2>Sign up for our newsletter to receive news and specials!!</h2>
 <div class="formContainer">
-	<form class="form-horizonatal newsletterForm" role="form" action="/process?form=newsletter" method="POST">
+	<form class="form-horizonatal newsletterForm" role="form" action="/newsletter" method="POST">
 		<input type="hidden" name="_csrf" value="{{csrf}}">
 		<div class="form-group">
 			<label for="fieldName" class="col-sm-2 control-label">Name</label>
@@ -29,11 +29,10 @@
 				evt.preventDefault();
 				var action = $(this).attr('action');
 				var $container = $(this).closest('.formContainer');
-					console.log(action)
-
 				$.ajax({
 					url: action,
 					type: 'POST',
+					data: $(this).serialize(),
 					success: function(data){
 						if (data.success){
 							$container.html('<h2>Thank you!</h2>');
