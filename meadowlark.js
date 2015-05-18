@@ -151,6 +151,10 @@
 		});
 	});
 
+	app.get('/newsletter/archive', function(req, res){
+		res.render('newsletter/archive');
+	})
+
 	app.post('/process', function(req, res){
 		if(req.xhr || req.accepts('json,html') === 'json'){
 			res.send({success: true});
